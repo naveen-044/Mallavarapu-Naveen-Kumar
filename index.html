@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naveen Kumar Mallavarapu - AI/ML & Web Developer Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Poppins (for general text) & Montserrat (for headings/bold text) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #222222; /* Dark background inspired by image */
+            color: #ffffff; /* White text */
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .container {
+            max-width: 1200px;
+        }
+        .header-nav-link {
+            position: relative;
+            padding-bottom: 5px;
+            transition: color 0.3s ease;
+        }
+        .header-nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: #0ea5e9; /* Sky Blue accent */
+            transition: width 0.3s ease;
+        }
+        .header-nav-link:hover::after {
+            width: 100%;
+        }
+        .btn-primary-hero {
+            background-color: #0ea5e9; /* Sky Blue accent */
+            color: #ffffff;
+            padding: 0.8rem 2rem;
+            border-radius: 9999px; /* Fully rounded */
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(14, 165, 233, 0.4); /* Sky Blue shadow */
+        }
+        .btn-primary-hero:hover {
+            background-color: #0284c7; /* Darker Sky Blue */
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(14, 165, 233, 0.6); /* Darker Sky Blue shadow */
+        }
+        .btn-secondary-hero {
+            background-color: transparent;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            padding: 0.8rem 2rem;
+            border-radius: 9999px;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+        }
+        .btn-secondary-hero:hover {
+            background-color: #ffffff;
+            color: #0ea5e9; /* Sky Blue text on hover */
+            transform: translateY(-3px);
+        }
+
+        /* Geometric shapes for hero section */
+        .shape-sky-blue-large {
+            background-color: #0ea5e9; /* Sky Blue */
+            position: absolute;
+            border-radius: 8px;
+        }
+        .shape-sky-blue-small {
+            background-color: #0ea5e9; /* Sky Blue */
+            position: absolute;
+            border-radius: 4px;
+        }
+        .shape-white-outline {
+            border: 2px solid #ffffff;
+            position: absolute;
+            border-radius: 8px;
+        }
+
+        /* Scroll-to-top button */
+        #scrollToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: #0ea5e9; /* Sky Blue */
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3); /* Sky Blue shadow */
+            transition: background-color 0.3s, transform 0.2s, opacity 0.3s;
+        }
+        #scrollToTopBtn:hover {
+            background-color: #0284c7; /* Darker Sky Blue */
+            transform: translateY(-3px);
+        }
+
+        /* Keyframe animations for hero text */
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .animate-slide-in-up {
+            animation: slideInUp 1s ease-out forwards;
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 12px;
+            margin-bottom: 4rem;
+            font-size: 3rem; /* Larger text */
+            font-weight: 800; /* Extra bold */
+            color: #ffffff; /* White for dark background */
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 100px;
+            height: 6px;
+            background-color: #0ea5e9; /* Sky Blue accent */
+            border-radius: 3px;
+        }
+        .card {
+            background-color: #2d3748; /* Darker card background */
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Deeper shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px); /* More pronounced lift */
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header Section -->
+    <header class="bg-[#222222] text-white py-5 fixed w-full z-50 shadow-lg">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+            <h1 class="text-4xl font-extrabold mb-3 md:mb-0 tracking-wide text-white">Naveen Kumar Mallavarapu</h1>
+            <nav>
+                <ul class="flex space-x-6 md:space-x-10">
+                    <li><a href="#home" class="header-nav-link text-lg font-medium">Home</a></li>
+                    <li><a href="#about" class="header-nav-link text-lg font-medium">About</a></li>
+                    <li><a href="#skills" class="header-nav-link text-lg font-medium">Skills</a></li>
+                    <li><a href="#projects" class="header-nav-link text-lg font-medium">Projects</a></li>
+                    <li><a href="#contact" class="header-nav-link text-lg font-medium">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-[#222222] text-white py-32 md:py-48 relative overflow-hidden min-h-screen flex items-center">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between relative z-10">
+            <!-- Left Content: Text and Buttons -->
+            <div class="md:w-1/2 text-center md:text-left mb-12 md:mb-0">
+                <p class="text-xl md:text-2xl text-gray-300 mb-4 animate-slide-in-up">Hello, I'm</p>
+                <h2 class="text-6xl md:text-8xl font-black text-[#0ea5e9] mb-4 leading-tight animate-slide-in-up delay-1">Naveen Kumar Mallavarapu</h2>
+                <h3 class="text-3xl md:text-5xl font-semibold text-white mb-8 animate-slide-in-up delay-2">AI/ML & Web Developer</h3>
+                <div class="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-6 animate-slide-in-up delay-3">
+                    <a href="#contact" class="btn-primary-hero text-lg font-semibold">Say Hello !!!</a>
+<a href="Naveen resume.pdf" target="_blank" class="btn-secondary-hero text-lg font-semibold">
+   Resume
+</a>
+                </div>
+                <!-- Small circle/line element -->
+                <div class="mt-12 flex justify-center md:justify-start items-center space-x-2 animate-fade-in delay-4">
+                    <div class="w-3 h-3 border-2 border-white rounded-full"></div>
+                    <div class="w-12 h-0.5 bg-white"></div>
+                </div>
+            </div>
+
+            <!-- Right Content: Profile Picture and Geometric Shapes -->
+            <div class="md:w-1/2 relative flex justify-center items-center h-96 md:h-[600px] w-full md:w-auto">
+                <!-- Large Sky Blue Block -->
+                <div class="shape-sky-blue-large w-48 h-48 md:w-64 md:h-64 top-10 right-10 md:top-20 md:right-20 transform rotate-12 animate-fade-in delay-2"></div>
+                <!-- Small Sky Blue Block -->
+                <div class="shape-sky-blue-small w-24 h-24 md:w-32 md:h-32 bottom-10 left-10 md:bottom-20 md:left-20 transform -rotate-6 animate-fade-in delay-3"></div>
+                <!-- White Outlines -->
+                <div class="shape-white-outline w-64 h-64 md:w-80 md:h-80 border-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-fade-in delay-1"></div>
+                <div class="shape-white-outline w-40 h-40 md:w-56 md:h-56 border-white top-1/4 right-1/4 transform translate-x-1/2 -translate-y-1/2 animate-fade-in delay-3"></div>
+
+                <!-- Profile Picture -->
+                <!-- Replace this placeholder image URL with your actual profile picture. -->
+                <img src="pic.jpg" width="300" height="200" alt="Naveen Kumar's Profile Picture" class="relative z-20 w-64 h-80 md:w-80 md:h-96 object-cover object-top rounded-lg shadow-2xl animate-fade-in delay-4">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-20 bg-[#1a202c] text-white flex items-center justify-center">
+        <div class="container mx-auto px-6 text-center md:text-left">
+            <h3 class="section-title text-center mx-auto">About Me</h3>
+            <div class="flex flex-col md:flex-row items-center md:space-x-12">
+                <div class="md:w-1/2 mb-10 md:mb-0 transform transition duration-500 hover:scale-105">
+                    <img src="black.jpg" alt="About Naveen Kumar" class="rounded-xl shadow-2xl w-full">
+                </div>
+                <div class="md:w-1/2 text-lg text-gray-300 leading-relaxed space-y-5">
+                    <p>
+                        Hello! I'm Naveen Kumar Mallavarapu, a highly motivated tech enthusiast looking for opportunities to improve personally and professionally. I possess a strong foundation in programming languages like C, Java, and Python, and I'm well-versed in data structures and algorithms using Java and C.
+                    </p>
+                    <p>
+                        My academic journey includes a Bachelor's in CSE from MARRI LAXMAN REDDY INSTITUTE OF TECHNOLOGY AND MANAGEMENT (2022-2026, CGPA: 6.73). I also completed my Intermediate from SUSHEELA MEMORIAL JUNIOR COLLEGE (2020-2022, 61.1%) and SSC from ZILLA PARISHAD SECONDARY SCHOOL (2020, CGPA: 9.8).
+                    </p>
+                    <p>
+                        I've gained practical experience through an internship on Deep Learning at the Central Institute Of Tool Design (Aug 01-Aug 14, 2024), where I learned about Neural Networks and machine learning model training. My skills extend to front-end development (HTML, CSS for visually engaging websites) and SQL for database management.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-[#222222] text-white">
+        <div class="container mx-auto px-6">
+            <h3 class="section-title text-center mx-auto">My Skills</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Skill Card: Programming Languages -->
+                <div class="card p-8 text-center flex flex-col items-center">
+                    <div class="text-sky-400 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16L2 12l4-4" />
+                        </svg>
+                    </div>
+                    <h4 class="text-2xl font-semibold text-sky-300 mb-3">Programming Languages</h4>
+                    <p class="text-gray-400 text-center">C Language, Java (OOPs, DSA), Python</p>
+                </div>
+                <!-- Skill Card: Machine Learning & AI -->
+                <div class="card p-8 text-center flex flex-col items-center">
+                    <div class="text-green-400 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 7h2m-2 10h2M17 7h2m-2 10h2M4 12H2m20 0h-2M7 12H5m12 0h-2M9 9V7m6 2V7m-3 3v4m-3-4v4m6-4v4m3-4v4M9 15v2m6-2v2m-3-3v2m-3-2v2m6-2v2" />
+                        </svg>
+                    </div>
+                    <h4 class="text-2xl font-semibold text-sky-300 mb-3">Machine Learning & AI</h4>
+                    <p class="text-gray-400 text-center">Basic ML Algorithms, Deep Learning (Neural Networks, CNN, BiLSTM), Python ML Packages</p>
+                </div>
+                <!-- Skill Card: Front-End Development -->
+                <div class="card p-8 text-center flex flex-col items-center">
+                    <div class="text-purple-400 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16L2 12l4-4" />
+                        </svg>
+                    </div>
+                    <h4 class="text-2xl font-semibold text-sky-300 mb-3">Front-End Development</h4>
+                    <p class="text-gray-400 text-center">HTML, CSS (Styling & Layouts), Visually Engaging Websites</p>
+                </div>
+                <!-- Skill Card: Databases -->
+                <div class="card p-8 text-center flex flex-col items-center">
+                    <div class="text-yellow-400 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+                        </svg>
+                    </div>
+                    <h4 class="text-2xl font-semibold text-sky-300 mb-3">Databases</h4>
+                    <p class="text-gray-400 text-center">SQL (Database Management Systems)</p>
+                </div>
+                <!-- Skill Card: Tools & Certifications -->
+                <div class="card p-8 text-center flex flex-col items-center">
+                    <div class="text-red-400 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
+                    </div>
+                    <h4 class="text-2xl font-semibold text-sky-300 mb-3">Tools & Certifications</h4>
+                    <p class="text-gray-400 text-center">Smart Interviews (DSA), Cisco C Language, HackerRank Java</p>
+                </div>
+                <!-- Skill Card: Soft Skills -->
+                <div class="card p-8 text-center flex flex-col items-center">
+                    <div class="text-teal-400 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                        </svg>
+                    </div>
+                    <h4 class="text-2xl font-semibold text-sky-300 mb-3">Soft Skills</h4>
+                    <p class="text-gray-400 text-center">Problem Solving, Logical Thinking, Communication, Adaptability, Time Management</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-[#1a202c] text-white">
+        <div class="container mx-auto px-6">
+            <h3 class="section-title text-center mx-auto">My Projects</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Project Card 1: Fake Job Detection -->
+                <div class="card p-6 flex flex-col">
+                    <img src="https://placehold.co/400x250/4a5568/e2e8f0?text=Fake+Job+Detection" alt="Fake Job Detection Project" class="rounded-lg mb-5 w-full h-52 object-cover shadow-md">
+                    <h4 class="text-2xl font-semibold text-sky-300 mb-2">Fake Job Detection Using ML</h4>
+                    <p class="text-gray-400 mb-4 flex-grow">
+                        This project aims to detect fraudulent job advertisements by analyzing job URLs through web scraping and Machine Learning models. It extracts job descriptions, validates source credibility, and classifies postings as genuine or fake. Developed using Python, BeautifulSoup, scikit-learn, and Streamlit, it enhances digital job safety.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-sky-700 text-sky-100 text-sm font-medium px-3 py-1 rounded-full">Python</span>
+                        <span class="bg-green-700 text-green-100 text-sm font-medium px-3 py-1 rounded-full">Machine Learning</span>
+                        <span class="bg-yellow-700 text-yellow-100 text-sm font-medium px-3 py-1 rounded-full">Web Scraping</span>
+                        <span class="bg-purple-700 text-purple-100 text-sm font-medium px-3 py-1 rounded-full">Streamlit</span>
+                    </div>
+                    <div class="flex justify-between items-center mt-auto">
+                        <a href="#" target="_blank" class="text-sky-400 hover:text-sky-200 hover:underline font-medium flex items-center">
+                            Live Demo (If available)
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+                        <a href="#" target="_blank" class="text-gray-400 hover:text-gray-200 hover:underline font-medium flex items-center">
+                            GitHub Repo (If available)
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Card 2: Inappropriate Content Detection -->
+               <!-- <div class="card p-6 flex flex-col">
+                    <img src="https://placehold.co/400x250/4a5568/e2e8f0?text=Content+Detection" alt="Inappropriate Content Detection" class="rounded-lg mb-5 w-full h-52 object-cover shadow-md">
+                    <h4 class="text-2xl font-semibold text-sky-300 mb-2">Inappropriate Content Detection</h4>
+                    <p class="text-gray-400 mb-4 flex-grow">
+                        Worked as a team to develop a project based on the CNN algorithm to detect inappropriate content in YouTube videos. The system utilizes BiLSTM based on content analysis using Python, aiming to enhance content moderation and safety.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-sky-700 text-sky-100 text-sm font-medium px-3 py-1 rounded-full">Python</span>
+                        <span class="bg-red-700 text-red-100 text-sm font-medium px-3 py-1 rounded-full">Deep Learning</span>
+                        <span class="bg-blue-700 text-blue-100 text-sm font-medium px-3 py-1 rounded-full">CNN</span>
+                        <span class="bg-teal-700 text-teal-100 text-sm font-medium px-3 py-1 rounded-full">BiLSTM</span>
+                    </div>
+                    <div class="flex justify-between items-center mt-auto">
+                        <a href="#" target="_blank" class="text-sky-400 hover:text-sky-200 hover:underline font-medium flex items-center">
+                            Live Demo (If available)
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+                        <a href="#" target="_blank" class="text-gray-400 hover:text-gray-200 hover:underline font-medium flex items-center">
+                            GitHub Repo (If available)
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+                    </div>
+                </div> -->
+
+                <!-- Project Card 3: Student Attendance Management -->
+                <div class="card p-6 flex flex-col">
+                    <img src="https://placehold.co/400x250/4a5568/e2e8f0?text=Attendance+System" alt="Student Attendance Management System" class="rounded-lg mb-5 w-full h-52 object-cover shadow-md">
+                    <h4 class="text-2xl font-semibold text-sky-300 mb-2">Student Attendance System</h4>
+                    <p class="text-gray-400 mb-4 flex-grow">
+                        Developed a Student Attendance Management System using sensors in Deep Learning. This project aims to automate and streamline the attendance tracking process, leveraging advanced deep learning techniques for accuracy and efficiency.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-sky-700 text-sky-100 text-sm font-medium px-3 py-1 rounded-full">Deep Learning</span>
+                        <span class="bg-orange-700 text-orange-100 text-sm font-medium px-3 py-1 rounded-full">Sensors</span>
+                        <span class="bg-gray-700 text-gray-100 text-sm font-medium px-3 py-1 rounded-full">Automation</span>
+                    </div>
+                    <div class="flex justify-between items-center mt-auto">
+                        <a href="#" target="_blank" class="text-sky-400 hover:text-sky-200 hover:underline font-medium flex items-center">
+                            Live Demo (If available)
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+                        <a href="#" target="_blank" class="text-gray-400 hover:text-gray-200 hover:underline font-medium flex items-center">
+                            GitHub Repo (If available)
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-[#222222] text-white">
+        <div class="container mx-auto px-6">
+            <h3 class="section-title text-center mx-auto">Get In Touch</h3>
+            <div class="max-w-xl mx-auto text-center">
+                <p class="text-xl text-gray-300 mb-10">
+                    I'm always excited to connect with new people and discuss potential collaborations.
+                    Feel free to send me a message!
+                </p>
+                <form class="space-y-7 card p-10" action="https://formspree.io/f/mnnzdvno" method="POST">
+                    <div>
+                        <input type="text" id="name" name="name" placeholder="Your Name"
+                               class="w-full p-4 border border-gray-600 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-3 focus:ring-sky-500 transition duration-200" required>
+                    </div>
+                    <div>
+                        <input type="email" id="email" name="email" placeholder="Your Email"
+                               class="w-full p-4 border border-gray-600 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-3 focus:ring-sky-500 transition duration-200" required>
+                    </div>
+                    <div>
+                        <textarea id="message" name="message" rows="6" placeholder="Your Message"
+                                  class="w-full p-4 border border-gray-600 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-3 focus:ring-sky-500 transition duration-200" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary-hero w-full text-xl font-semibold rounded-full shadow-lg hover:shadow-xl">Send Message</button>
+                </form>
+                <div class="mt-12">
+                    <h4 class="text-3xl font-semibold text-white mb-6">Connect with me:</h4>
+                    <div class="flex justify-center space-x-8">
+                        <!-- LinkedIn Icon -->
+                        <a href="https://www.linkedin.com/in/naveen-kumar-mallavarapu" target="_blank" class="social-icon text-sky-400 hover:text-sky-200 text-5xl">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                        <!-- GitHub Icon (Placeholder) -->
+                        <a href="https://github.com/naveen-044" target="_blank" class="social-icon text-gray-400 hover:text-gray-200 text-5xl">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.087-.744.084-.73.084-.73 1.205.084 1.839 1.237 1.839 1.237 1.07 1.835 2.809 1.305 3.493.998.108-.776.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576c4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+</a>
+                        <!-- Email Icon -->
+                        <a href="mailto:naveenkumarmallavarapu04@gmail.com" target="_blank" class="social-icon text-sky-400 hover:text-sky-200 text-5xl">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12.713l-11.985-9.713h23.971l-11.986 9.713zm-11.985 2.287l-1.015-1.238v-9.524l1.015 1.238zm23.971 0l1.015-1.238v-9.524l-1.015 1.238zm-23.971-11.975v14.975h23.971v-14.975h-23.971z"/></svg>
+</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-gray-400 py-10 text-center">
+        <div class="container mx-auto px-6">
+            <p class="text-lg">&copy; 2025 Naveen Kumar Mallavarapu. All rights reserved.</p>
+            <p class="mt-3 text-md">Designed inspired by modern portfolio aesthetics</p>
+        </div>
+    </footer>
+
+    <!-- Scroll-to-top button -->
+    <button onclick="topFunction()" id="scrollToTopBtn" title="Go to top">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Get the scroll-to-top button
+        let scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.style.display = "block";
+                scrollToTopBtn.style.opacity = "1";
+            } else {
+                scrollToTopBtn.style.opacity = "0";
+                setTimeout(() => {
+                    if (document.body.scrollTop <= 20 && document.documentElement.scrollTop <= 20) {
+                        scrollToTopBtn.style.display = "none";
+                    }
+                }, 300); // Delay hiding to match transition
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+    </script>
+</body>
+</html>

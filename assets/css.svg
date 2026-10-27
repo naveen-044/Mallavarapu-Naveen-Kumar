@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
-  <!-- CSS3 Shield -->
-  <path d="M71 460L32 0h448l-39 460-201 52-169-52z" fill="#1572B6"/>
-  <path d="M256 472l166-43 33-389H256v432z" fill="#33A9DC"/>
-  <path d="M256 208h-68l-5-52h73v-48H129l1 12 18 204h108v-48h-56l-4-44h60v-24z" fill="#EBEBEB"/>
-  <path d="M256 355l-70-19-4-52h-48l8 97 114 32v-58zm108-147l-10 114-98 27v50l146-41 1-12 16-186H256v48h108z" fill="#FFFFFF"/>
-</svg>

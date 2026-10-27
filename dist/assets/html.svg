@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
-  <!-- HTML5 Shield -->
-  <path d="M71 460L32 0h448l-39 460-201 52-169-52z" fill="#E44D26"/>
-  <path d="M256 472l166-43 33-389H256v432z" fill="#F16529"/>
-  <path d="M256 176h-80l-6-64h172l-1-12h8v-32H115l1 12 17 196h123v-48h-71l-5-52h76v-12z" fill="#EBEBEB"/>
-  <path d="M256 355l-70-19-4-52h-48l8 97 114 32v-58zm0-179v48h72l-7 76-65 18v50l114-32 1-12 14-160H256z" fill="#FFFFFF"/>
-</svg>
